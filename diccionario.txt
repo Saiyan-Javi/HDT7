@@ -1,1 +1,6 @@
 apple manzana
+game juego
+videogame videojuego
+hi hola
+dog perro
+brain cerebro
