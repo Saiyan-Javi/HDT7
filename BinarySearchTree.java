@@ -3,20 +3,21 @@ public class BinarySearchTree {
     
     private class Node {
         private String key;
-        private String value;
+        private Translation value;
         private Node left, right;
         
-        public Node(String key, String value) {
+        public Node(String key, Translation value) {
             this.key = key;
             this.value = value;
         }
     }
     
-    public void put(String key, String value) {
+    
+    public void put(String key, Translation value) {
         root = put(root, key, value);
     }
     
-    private Node put(Node x, String key, String value) {
+    private Node put(Node x, String key, Translation value) {
         if (x == null) return new Node(key, value);
         int cmp = key.compareTo(x.key);
         if (cmp < 0) x.left = put(x.left, key, value);
@@ -25,7 +26,7 @@ public class BinarySearchTree {
         return x;
     }
     
-    public String get(String key) {
+    public Translation get(String key) {
         Node x = root;
         while (x != null) {
             int cmp = key.compareTo(x.key);
