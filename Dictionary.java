@@ -8,7 +8,10 @@ public class Dictionary {
     private BinarySearchTree englishTree;
     private BinarySearchTree spanishTree;
     private BinarySearchTree frenchTree;
-    
+    /**
+     * 
+     * @param filename
+     */
     public Dictionary(String filename) {
         englishTree = new BinarySearchTree();
         spanishTree = new BinarySearchTree();
@@ -32,7 +35,13 @@ public class Dictionary {
             e.printStackTrace();
         }
     }
-    
+    /**
+     * 
+     * @param word
+     * @param tolanguage
+     * @param languaje
+     * @return
+     */
     public String translate(String word, String tolanguage, String languaje) {
 
         Translation translationen = null;
@@ -90,6 +99,10 @@ public class Dictionary {
                     }
                 }
             }
+            /**
+             * 
+             * @param filename
+             */
     private void readDictionary(String filename) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -109,6 +122,11 @@ public class Dictionary {
             e.printStackTrace();
         }
     }
+    /**
+     * 
+     * @param lenguap
+     * @return
+     */
     public String detectLenguage(String lenguap){
         try {
             Scanner scanner = new Scanner(new File("diccionario.txt"));

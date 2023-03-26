@@ -1,22 +1,38 @@
 public class BinarySearchTree {
     private Node root;
-    
+    /**
+     * 
+     */
     private class Node {
         private String key;
         private Translation value;
         private Node left, right;
-        
+        /**
+         * 
+         * @param key
+         * @param value
+         */
         public Node(String key, Translation value) {
             this.key = key;
             this.value = value;
         }
     }
     
-    
+    /**
+     * 
+     * @param key
+     * @param value
+     */
     public void put(String key, Translation value) {
         root = put(root, key, value);
     }
-    
+    /**
+     * 
+     * @param x
+     * @param key
+     * @param value
+     * @return
+     */
     private Node put(Node x, String key, Translation value) {
         if (x == null) return new Node(key, value);
         int cmp = key.compareTo(x.key);
@@ -25,7 +41,11 @@ public class BinarySearchTree {
         else x.value = value;
         return x;
     }
-    
+    /**
+     * 
+     * @param key
+     * @return
+     */
     public Translation get(String key) {
         Node x = root;
         while (x != null) {
